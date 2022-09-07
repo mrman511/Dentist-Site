@@ -1,0 +1,321 @@
+@import './variables.scss';
+
+
+.navbar {
+  position: fixed;
+  height: 20vh;
+  width: 100%;
+  background-color: $menuColour1;
+  background-image: radial-gradient(circle at 70% 200%, $menuColour5 40%, $menuColour1 42%);
+  color: $mainColour;
+  @include flexRowCenter();
+  z-index: 2;
+}
+
+.mcButton {
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  transform: translateY(-50%);
+  top: 10%;
+  left: calc(100% - 50px - 5%);
+  @include flexColumnCenter();
+  z-index: 3;
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  .buttonLayer {
+    background-color: $mainColour;
+    height: 3px;
+    width: 45px;
+    position: absolute;
+  }
+
+  #mcTop {
+    margin-top: 25px;
+  }
+
+  #mcMiddle { 
+    margin-top: 25px;
+  }
+
+  #mcBottom {    
+    margin-top: 25px;
+  }
+}
+
+.menu {
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: $menuColour2;
+  @include flexColumnCenter();
+
+  z-index: 2;
+
+  ul {
+    height: 60vh;
+    margin-top: 20vh;
+    @include flexColumnCenterBetween();
+    list-style: none;
+
+    a{
+
+      &:hover{
+        cursor: pointer;
+      }
+
+      li {
+        color: $mainColour;
+        font-size: 3vh;
+      }
+    }
+  }
+}
+
+.banner{
+  padding-top: 25vh;
+  width: 100%;
+  position: relative;
+  @include flexColumnCenter;
+  z-index: 0;
+
+  img{
+    z-index: 2;
+  }
+}
+
+
+
+
+//////////////////
+///////List///////
+//////////////////
+
+.listContainer {
+  margin-top: 20px;
+  height: auto;
+
+  .imageContainer {
+    width: 100%;
+    height: auto;
+    // display: flex;
+    background-image: linear-gradient(135deg, rgb(0, 11, 107, .8) 30%, rgb(71, 88, 238, .9));
+
+    h2 {
+      position: absolute;
+      color: $mainColour;
+      font-size: 38px;
+      margin-top: 10%;
+      left: 50%;
+      transform: translateY(-50%);
+      transform: translateX(-50%);
+      opacity: 1 !important;
+    }
+
+    img {
+      z-index: -1;
+    }
+  }
+
+
+
+  .serviceList{
+    width: 100%;
+    position: relative;
+    @include flexRowCenter;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    // background-color: rgb(200, 200, 200);
+  }
+
+  .teamList{
+    margin: 0 auto;
+    margin-top: -15%;
+    display: grid;
+    width: 90vw;
+    grid-template: 66.6vw 33.3vw / 50% 50%;
+    grid-template-areas: "owner owner";
+    grid-auto-flow: row;
+    grid-auto-rows: 33.3vw;
+    column-gap: 0;
+  }
+}
+
+
+
+//////////////////
+///Service Item///
+//////////////////
+
+.serviceItem {
+  width: 200px;
+  height: 200px;
+  transform: translateX(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  // margin-left: 5px;
+  // margin-right: 5px;
+  // margin-bottom: 30px;
+  // position: sticky;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px #a8a8a8;
+  z-index: 0;
+  
+  .serviceInfoBackground{
+    background-color: #fff;
+    @include flexRowCenter;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    
+    .serviceInfo{
+      width: 90%;
+      @include flexColumnCenterEven;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 2px 2px 10px #a8a8a8;
+
+      .serviceCard{
+        max-width: 200px;
+        max-height: 200px;
+        @include flexColumnCenterBetween;
+
+        img{
+          max-width: 200px;
+        }
+      }
+
+      p{
+        width: 90%;
+      }
+    }
+  }
+}
+
+///////////////////
+/////Team Item/////
+///////////////////
+
+
+.teamItem {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: $mainColour;
+}
+
+.teamItem:nth-child(1){ 
+  grid-area: 1 / 1 / 3 / 3;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+
+
+//////////////////
+//////Footer//////
+//////////////////
+
+.footer {
+  width: 100%;
+  min-height: 400px;
+  position: relative;
+  padding-bottom: 20px;
+  margin-top: 20px;
+
+  background-color: $menuColour1;
+  color:rgb(195, 195, 195);
+  z-index: -1;
+
+  .mapContainer {
+    width: 80vw;
+    height: 80vw;
+    max-width: 400px;
+    max-height: 400px;
+  }
+
+  ul{
+    width: 15%;
+    height: 40vw;
+    padding: 0;
+    position: absolute;
+    margin-top: 5%;
+    left: 85%;
+    @include flexColumnCenterBetween;
+    list-style: none;
+
+    li {
+      display: block;
+      height: 21px;
+      width: 21px;
+    }
+  }
+
+  article {
+    margin-left: 21px;
+
+    h4{
+      margin-bottom: 0;
+    }
+
+    address {
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+//*************************//
+//**/////////////////////**//
+//**////Media Queries////**//
+//**/////////////////////**//
+//*************************//
+
+@media only screen and (min-width: 400px){
+
+
+  .listContainer{
+
+
+    .serviceList{
+
+    }
+
+    .teamList {
+      width: 90%;
+      grid-template: 33.4vw 33.3vw 33.3vw / repeat(3, 1fr);
+    }
+
+  }
+}
+
+@media only screen and (min-width: 600px){
+
+
+  .listContainer{
+
+
+    .serviceList{
+
+    }
+
+    .teamList {
+      width: 90%;
+      height: 44vw;
+      grid-template: repeat(2, 1fr)/ repeat(3, 1fr);
+      grid-auto-flow: column dense;
+      grid-auto-columns: 1fr;
+    }
+
+  }
+}
+
