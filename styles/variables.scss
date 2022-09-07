@@ -13,6 +13,9 @@ $menuColour3: rgb(0, 11, 107);
 $menuColour4: rgb(32, 40, 107);
 $menuColour5: rgb(71, 88, 238);
 
+$boxShadowWhiteBackground: 2px 2px 10px #a8a8a8;
+$boxShadowDarkBackground: 2px 2px 10px #252525;
+
 
 @mixin flexRowCenter{
   display: flex;

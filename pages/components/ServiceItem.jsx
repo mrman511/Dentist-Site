@@ -55,7 +55,7 @@ export default function ServiceItem(props){
                 <h3>{ title }</h3>
               </div>
               <p>{ description }</p>
-              <button>Make An Appointment</button>
+              <a  className={`${styles.btn} ${styles.btnMd}`}>Make An Appointment</a>
             </div>
           </div>
         </motion.article> }
