@@ -1,5 +1,25 @@
 @import './variables.scss';
 
+.btn{
+  background-color: $menuColour5;
+  // box-shadow: $boxShadowDarkBackground;
+  @include flexRowCenter;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.btnMd {
+  height: 35px;
+  border-radius: 5px;
+}
+
+.btnLg{
+  height: 50px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 6px;
+  font-size: 1.25em;
+}
 
 .navbar {
   position: fixed;
@@ -164,7 +184,7 @@
   // position: sticky;
   overflow: hidden;
   border-radius: 8px;
-  box-shadow: 2px 2px 10px #a8a8a8;
+  box-shadow: $boxShadowWhiteBackground;
   z-index: 0;
   
   .serviceInfoBackground{
@@ -179,7 +199,7 @@
       @include flexColumnCenterEven;
       background-color: #fff;
       border-radius: 8px;
-      box-shadow: 2px 2px 10px #a8a8a8;
+      box-shadow: $boxShadowWhiteBackground;
 
       .serviceCard{
         max-width: 200px;
@@ -195,6 +215,10 @@
         width: 90%;
       }
     }
+  }
+
+  .btn {
+    box-shadow: $boxShadowWhiteBackground;
   }
 }
 
@@ -228,17 +252,41 @@
   position: relative;
   padding-bottom: 20px;
   margin-top: 20px;
-
+  @include flexColumnCenterEven;
   background-color: $menuColour1;
   color:rgb(195, 195, 195);
   z-index: -1;
 
   .mapContainer {
-    width: 80vw;
-    height: 80vw;
-    max-width: 400px;
-    max-height: 400px;
+    width: 100vw;
+    height: 250px;
+    
   }
+  
+    article {
+      width: 100%;
+      min-height: 200px;
+      @include flexRowCenterEven;
+  
+      h4{
+        margin-bottom: 0;
+      }
+  
+      address {
+  
+        p {
+          margin: 0;
+          padding: 0;
+        }
+      }
+  
+      .addressBtns{
+        width: 60%;
+        position: relative;
+        align-self: stretch;
+        @include flexColumnCenterEven;
+      }
+    }
 
   ul{
     width: 15%;
@@ -257,19 +305,8 @@
     }
   }
 
-  article {
-    margin-left: 21px;
-
-    h4{
-      margin-bottom: 0;
-    }
-
-    address {
-
-      p {
-        margin: 0;
-      }
-    }
+  .btn {
+    box-shadow: $boxShadowDarkBackground;
   }
 }
 
