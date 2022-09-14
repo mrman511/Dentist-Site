@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { menuVariants } from "../data/motion-objects";
+import { menuVariants } from "../utils/data/motion-objects";
 
 export default function Menu({ styles, menuState }){
 

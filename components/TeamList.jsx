@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 import TeamItem from "./TeamItem";
-import teamImage from '../../public/team.jpg';
+import teamImage from '../public/team.jpg';
 
-import { mockTeamData } from '../data/mock-team';
+import { mockTeamData } from '../utils/data/mock-team';
 
 export default function TeamList(props) {
 

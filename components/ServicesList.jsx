@@ -1,9 +1,9 @@
 import { useRef, useEffect, useState } from "react";
-import { mockServiceData } from "../data/mock-services";
+import { mockServiceData } from "../utils/data/mock-services";
 import Image from "next/image";
 import ServiceItem from "./ServiceItem";
-import servicesImage from "../../public/bannerImage.jpeg";
-import { serviceListLength } from "../helpers/createStyles";
+import servicesImage from "../public/bannerImage.jpeg";
+import { serviceListLength } from "../utils/helpers/createStyles";
 
 export default function ServicesList({ styles, screenWidth }){
 

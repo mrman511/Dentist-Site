@@ -1,21 +1,21 @@
 import Map from "./Map";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faFacebookMessenger,  faInstagram, faYoutube,  } from "@fortawesome/free-brands-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faFacebook, faFacebookMessenger,  faInstagram, faYoutube,  } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer(props){
 
   const { styles } = props;
-  const icons = [faFacebook, faFacebookMessenger, faInstagram, faYoutube ];
+  // const icons = [faFacebook, faFacebookMessenger, faInstagram, faYoutube ];
 
-  const parsedicons = icons.map(icon => {
-    return (
-      <li key={ icons.lastIndexOf(icon) + 1 }>
-        <a href="">
-          < FontAwesomeIcon icon={icon} className={ styles.icon } />
-        </a>
-      </li>
-    );
-  });
+  // const parsedicons = icons.map(icon => {
+  //   return (
+  //     <li key={ icons.lastIndexOf(icon) + 1 }>
+  //       <a href="">
+  //         < FontAwesomeIcon icon={icon} className={ styles.icon } />
+  //       </a>
+  //     </li>
+  //   );
+  // });
 
   return (
     <footer className={ styles.footer }>

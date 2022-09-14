@@ -1,10 +1,10 @@
-export default function AppointmentForm ({ styles }){
+function AppointmentForm ({ styles }){
 
   return (
     <section className={ styles.appointmentForm }>
       <form action="">
         <div className={ `${styles.formInput} ${styles.formName}` }>
-          <label for='name'>Your Name:</label>
+          <label>Your Name:</label>
           <input type="text" name='name' />
         </div>
 
@@ -14,18 +14,18 @@ export default function AppointmentForm ({ styles }){
         </div> */}
 
         <div className={ `${styles.formInput} ${styles.formEmail}` }>
-          <label for='name'>Your email:</label>
+          <label>Your email:</label>
           <input type="email" name='email' />
         </div>
 
         <div className={ `${styles.formInput} ${styles.formReason}` }>
-          <label for="type">Reason for Appointment</label>
+          <label>Reason for Appointment</label>
           <textarea type="text" name="type"/>
         </div>
 
         <div className={ styles.preferences }>
           <div className={ styles.timePreferences }>
-            <label for="time">Prefered Time</label>
+            <label>Prefered Time</label>
             <select name="time" id="" multiple>
               <option value="9">9:00am</option>
               <option value="10">10:00am</option>
@@ -40,7 +40,7 @@ export default function AppointmentForm ({ styles }){
           </div>
 
           <div className={ styles.dayPreferences }>
-            <label for="day">Prefered Day</label>
+            <label>Prefered Day</label>
             <select name="day" id="" multiple>
               <option value="Monday">Monday</option>
               <option value="Tuesday">Tuesday</option>
@@ -57,4 +57,6 @@ export default function AppointmentForm ({ styles }){
 
     </section>
   );
-} 
+}
+
+export default AppointmentForm;

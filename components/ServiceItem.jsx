@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { motion, AnimatePresence, useCycle } from "framer-motion";
-import { serviceStyles } from "../helpers/createStyles";
-import image from '../../public/mock-service.jpeg';
-import { serviceVariants } from "../data/motion-objects";
+import { serviceStyles } from "../utils/helpers/createStyles";
+import image from '../public/mock-service.jpeg';
+import { serviceVariants } from "../utils/data/motion-objects";
 
 export default function ServiceItem(props){ 
-  const { styles, title, imagePath, description, listCount, position, screenWidth } = props
+  const { styles, title, description, listCount, position, screenWidth } = props
   const [showInfo, cycleInfo] = useCycle(false, true);
   const style = serviceStyles(position, listCount, screenWidth);
 
