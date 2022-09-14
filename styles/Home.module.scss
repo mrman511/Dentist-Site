@@ -30,6 +30,71 @@
   color: $mainColour;
   @include flexRowCenter();
   z-index: 2;
+
+  .titleContainer {
+    margin-left: 20%;
+    
+    h1 {
+      font-family: cursive;
+      font-size: 38px;
+      margin: 0;
+    }
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
+//////////////////
+///////HERO///////
+//////////////////
+
+.hero{
+  padding-top: 26vh;
+  width: 100%;
+  position: relative;
+  @include flexColumnCenter;
+  z-index: 0;
+  
+  .banner{
+    width: 100vw;
+    height: 75vw;
+    position: relative;
+    background: radial-gradient(circle 150vw at 0vw -20vw, transparent 65%, rgba(255, 255, 255, 1) 75%),
+      radial-gradient(circle 175vw at 00vw 10vw, transparent 50%, rgba(0, 18, 184, .9)  50%),
+      radial-gradient(circle 205vw at 00vw -20vw, transparent 50%, rgba(71, 88, 238, .5)  50%);
+
+    h2{
+      width: 150px;
+      position: absolute;
+      transform: translateX(-50%);
+      margin-left: 70%;
+      top: 35vw;
+      background-color: transparent;
+    }
+
+    >div{
+      position: unset !important;
+    }
+    
+    .image{
+      object-fit: contain;
+      position: relative !important;
+      height: unset !important;
+      width: 100% !important;
+      z-index: -1;
+    }
+  }
+
+  .about {
+    width: 90vw;
+    margin-top: -50px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.657);
+    border-radius: 8px;
+    box-shadow: $boxShadowWhiteBackground;
+    z-index: 1;
+  }
 }
 
 .mcButton {
@@ -66,6 +131,10 @@
   }
 }
 
+.wideMenu{ 
+  display: none !important;
+}
+
 .menu {
   top: 0;
   width: 100%;
@@ -95,20 +164,6 @@
     }
   }
 }
-
-.banner{
-  padding-top: 25vh;
-  width: 100%;
-  position: relative;
-  @include flexColumnCenter;
-  z-index: 0;
-
-  img{
-    z-index: 2;
-  }
-}
-
-
 
 
 //////////////////
@@ -219,6 +274,12 @@
 
   .btn {
     box-shadow: $boxShadowWhiteBackground;
+    margin-bottom: 1em;
+    color: white;
+
+    span{
+      margin: 0 1em;
+    }
   }
 }
 
@@ -242,6 +303,102 @@
 
 
 
+//////////////////////
+///Appointment Form///
+//////////////////////
+
+.appointmentForm{
+  width: 95%;
+  // height: 80vh;
+  padding: 10px 0;
+  margin: 20px auto;
+  font-size: 1.2em;
+  border-radius: 8px;
+  box-shadow: $boxShadowWhiteBackground;
+
+  form{
+    width: 100%;
+    height: 100%;
+    @include flexColumnCenterEven;
+
+   div {
+     margin: 10px 0;
+   }
+
+   label {
+     margin-bottom: 5px;
+   }
+   
+   input {
+     font-size: 1em;
+     padding: 5px;
+     border: 1.2px outset black;
+     max-width: 350px;
+    //  box-shadow: $boxShadowWhiteBackground
+    }
+
+    textarea {
+      font-size: 1em;
+      border-radius: 5px;
+      padding: 5px;
+      max-width: 350px;
+    }
+    
+    .formInput{
+      @include flexColumnCenter;
+      width: 80%;
+      
+      input{
+        width: 100%;
+        border-radius: 5px;
+      }
+      
+      textarea {
+        width: 100%;
+        height: 100px;
+      }
+    }
+    
+    
+    .preferences {
+      width: 100%;
+      @include flexColumnCenterEven;
+      
+      .timePreferences{
+        width: 130px
+      }
+      
+      .dayPreferences{
+        width: 175px
+      }
+      
+      div {
+        // width: 40%;
+        @include flexColumnCenter;
+        
+        select {
+          width: 100%;
+          border-radius: 5px;
+          
+          option{
+            // transform: translateX(-50%);
+            // margin-left: 50%;
+            @include flexColumnCenter;
+            margin-top: 2px;
+            font-size: 1.25em;
+          }
+        }
+      }
+    }
+    
+    .btn{
+      box-shadow: $boxShadowWhiteBackground;
+      color: #fff;
+    }
+  }
+}
+
+
 //////////////////
 //////Footer//////
 //////////////////
@@ -255,7 +412,7 @@
   @include flexColumnCenterEven;
   background-color: $menuColour1;
   color:rgb(195, 195, 195);
-  z-index: -1;
+
 
   .mapContainer {
     width: 100vw;
@@ -263,47 +420,51 @@
     
   }
   
-    article {
-      width: 100%;
-      min-height: 200px;
-      @include flexRowCenterEven;
-  
-      h4{
-        margin-bottom: 0;
-      }
-  
-      address {
-  
-        p {
-          margin: 0;
-          padding: 0;
-        }
-      }
-  
-      .addressBtns{
-        width: 60%;
-        position: relative;
-        align-self: stretch;
-        @include flexColumnCenterEven;
+  .contact {
+    width: 100%;
+    min-height: 200px;
+    @include flexColumnCenterEven;
+
+    h4{
+      margin-bottom: 0;
+    }
+
+    address {
+
+      p {
+        margin: 0;
+        padding: 0;
       }
     }
 
-  ul{
-    width: 15%;
-    height: 40vw;
-    padding: 0;
-    position: absolute;
-    margin-top: 5%;
-    left: 85%;
-    @include flexColumnCenterBetween;
-    list-style: none;
+    .addressBtns{
+      // width: 60%;
+      position: relative;
+      align-self: stretch;
+      @include flexColumnCenterEven;
 
-    li {
-      display: block;
-      height: 21px;
-      width: 21px;
+      .btn {
+        margin: 10px
+      }
     }
   }
+
+  // ul{
+  //   width: 15%;
+  //   height: 40vw;
+  //   padding: 0;
+  //   position: absolute;
+  //   margin-top: 5%;
+  //   left: 85%;
+  //   @include flexColumnCenterBetween;
+  //   list-style: none;
+
+  //   li {
+  //     display: block;
+  //     height: 21px;
+  //     width: 21px;
+  //   }
+  // }
 
   .btn {
     box-shadow: $boxShadowDarkBackground;
@@ -335,6 +496,27 @@
   }
 }
 
+@media only screen and (min-width: 550px){
+
+
+  .footer{
+
+    .contact{
+      flex-direction: row;
+
+      .addressBtns {
+        width: 60%;
+
+        .btn{
+          margin: 0;
+        }
+      }
+    }
+
+
+  }
+}
+
 @media only screen and (min-width: 600px){
 
 
@@ -353,6 +535,40 @@
       grid-auto-columns: 1fr;
     }
 
+  }
+}
+
+@media only screen and (min-width: 1000px){
+
+  .mcButton{
+    display: none;
+  }
+
+  .mobileMenu{
+    display: none;
+  }
+
+  .wideMenu{
+    display: flex !important;
+  }
+
+  .menu{
+    height: 5vh;
+    width: 100%;
+    top: 20vh;
+
+    ul {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      flex-direction: row;
+      justify-content: space-evenly;
+      
+      li {
+        font-size: 1.5em;
+      }
+    }
   }
 }
 

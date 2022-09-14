@@ -21,8 +21,22 @@ const serviceStyles = (position, length, screenWidth) => {
     if (position % 3 === 0){
       style.left = '2.5vw';
     } else if (position % 3 === 2) {
-      style.right= '2.5vw';
+      style.right = '2.5vw';
     }
+  } else {
+    const verticalPosition = Math.ceil((position + 1) / 4);
+    const horizontalPosition = position % 4;
+    style.width = '17vw';
+    style.height = '20vw';
+    style.top = `calc((23vw * ${ verticalPosition -1 }) + 10vw + 25px )`;
+    if (horizontalPosition === 0){
+      style.left = '10vw'
+    } else if (horizontalPosition === 3){
+      style.right = '10vw'
+    } else {
+      style.left = `calc((4vw + 17vw)*${ horizontalPosition } + 10vw)`
+    }
+    
   }
   return style;
 }
@@ -36,6 +50,8 @@ const serviceListLength = (length, screenWidth) => {
     style.height = `calc((50vw - 2.5vw + 30px) * ${length /2})`
   } else if (screenWidth < 1000){
     style.height = `calc((30vw + 30px) * ${ Math.ceil(length / 3) })`
+  } else {
+    style.height = `calc((20vw + 30px) *${ Math.ceil(length/4) })`
   }
 
   return style

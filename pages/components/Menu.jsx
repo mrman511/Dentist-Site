@@ -5,7 +5,7 @@ export default function Menu({ styles, menuState }){
 
   return (
     <AnimatePresence>
-      { menuState.menu && <motion.div className={ styles.menu }
+      { menuState.menu && <motion.div className={ `${styles.menu} ${styles.mobileMenu}` }
         initial='hidden' 
         animate='visable'
         exit='exit'
