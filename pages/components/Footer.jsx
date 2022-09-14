@@ -23,7 +23,7 @@ export default function Footer(props){
         <Map styles={ styles }  />
       </div>
 
-      <article>
+      <article className={ styles.contact }>
         <div className='address'>
           <h4>Dr. Ingrid Thie</h4>
           <address>
