@@ -1,5 +1,5 @@
 import Image from "next/image"
-import loremDescription from "../data/loremDescription";
+import loremDescription from "../utils/data/loremDescription";
 
 export default function Banner({ styles }){
 

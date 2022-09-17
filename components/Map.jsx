@@ -1,8 +1,8 @@
 import {
   GoogleMap,
   LoadScriptNext,
-  Marker,
-  InfoWindow,
+  Marker//,
+  // InfoWindow,
 } from "@react-google-maps/api";
 
 const Map = (props) => {

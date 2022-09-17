@@ -4,15 +4,15 @@ import Head from 'next/head';
 import { useState, useEffect} from 'react';
 import Image from 'next/image';
 import styles from '../styles/Home.module.scss';
-import Navbar from './components/Navbar';
-import McButton from './components/McButton';
-import Menu from './components/Menu';
-import WideScreenMenu from './components/WideScreenMenu';
-import Banner from './components/Banner';
-import ServicesList from './components/ServicesList';
-import TeamList from './components/TeamList';
-import AppointmentForm from './components/AppointmentForm';
-import Footer from './components/Footer';
+import Navbar from '../components/Navbar';
+import McButton from '../components/McButton';
+import Menu from '../components/Menu';
+import WideScreenMenu from '../components/WideScreenMenu';
+import Banner from '../components/Banner';
+import ServicesList from '../components/ServicesList';
+import TeamList from '../components/TeamList';
+import AppointmentForm from '../components/AppointmentForm';
+import Footer from '../components/Footer';
 
 export default function Home() {
   const [ menu, cycleMenu ]  = useCycle(false, true);

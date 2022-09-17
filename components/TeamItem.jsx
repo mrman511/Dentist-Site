@@ -1,9 +1,9 @@
 import Image from "next/image";
-import ProfileImage from '../../public/mock-profile.jpeg';
-import OwnerImage from '../../public/owner.jpeg';
+import ProfileImage from '../public/mock-profile.jpeg';
+import OwnerImage from '../public/owner.jpeg';
 
 export default function TeamItem(props) {
-  const { styles, name, position, description, imagePath } = props;
+  const { styles, imagePath } = props;
   let img;
 
   if (imagePath === "owner.jpeg"){
