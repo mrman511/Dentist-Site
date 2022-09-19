@@ -142,16 +142,14 @@ const menuVariants = {
 const serviceVariants = {
   showInfo: {
     enter: {
-      // width: '220px',
-      // height: '220px',
+      
     },
 
     animate: {
-      // position: 'absolute',
-      width: '100%',
+      // position: 'absoulte',
+      // gridArea:'1 / 1 / -1 / -1',
+      width: '97%',
       height: '100%',
-      top: '50%',
-      left: '0',
       zIndex: 1,
       transition: {
         duration: .5,

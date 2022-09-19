@@ -2,6 +2,10 @@ function AppointmentForm ({ styles }){
 
   return (
     <section className={ styles.appointmentForm }>
+      <div className={ styles.formHeader }>
+        <h3>To Enquire about an Appointment</h3>
+        <p>Please submit this form</p>
+      </div>
       <form action="">
         <div className={ `${styles.formInput} ${styles.formName}` }>
           <label>Your Name:</label>

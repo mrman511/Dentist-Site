@@ -7,17 +7,18 @@ import { serviceVariants } from "../utils/data/motion-objects";
 export default function ServiceItem(props){ 
   const { styles, id, title, description, listCount, position, screenWidth } = props
   const [showInfo, cycleInfo] = useCycle(false, true);
-  const style = serviceStyles(position, listCount, screenWidth);
+  // const style = serviceStyles(position, listCount, screenWidth);
 
   return (
     <>
       <AnimatePresence>
         { !showInfo && <motion.article 
           className={ styles.serviceItem } s
-          style={ style } 
+          // style={ style } 
           initial="enter"
           animate="animate"
           exit='exit'
+          whileHover={{ scale: 1.2 }}
           onClick={ () => cycleInfo() }
           >
           <div className={styles.serviceCard}>
@@ -34,7 +35,7 @@ export default function ServiceItem(props){
 
         { showInfo && <motion.article 
           className={ styles.serviceItem } 
-          style={ style } 
+          // style={ style } 
           initial="enter"
           animate="animate"
           exit='exit'
@@ -44,7 +45,7 @@ export default function ServiceItem(props){
           >
           <div className={ styles.serviceInfoBackground }>
             <div className={ styles.serviceInfo }>
-              <div className={ style.serviceCard }>
+              <div className={ styles.serviceCard }>
                   < Image 
                     src={ image }
                     width="200px"

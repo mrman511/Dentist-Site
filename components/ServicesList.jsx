@@ -13,7 +13,7 @@ export default function ServicesList({ styles, screenWidth }){
     setListCount(serviceList.current.childElementCount);
   }, [])
 
-  const style = serviceListLength(listCount, screenWidth);
+  // const style = serviceListLength(listCount, screenWidth);
 
   const parsedServiceData = [];
 
@@ -37,7 +37,7 @@ export default function ServicesList({ styles, screenWidth }){
         <h2>Our Services</h2>
         < Image src={ servicesImage } layout="responsive"/>
       </div>
-      <div ref={ serviceList } className={ styles.serviceList } style ={ style }>
+      <div ref={ serviceList } className={ styles.serviceList }>
         { parsedServiceData }
       </div>
     </section>
