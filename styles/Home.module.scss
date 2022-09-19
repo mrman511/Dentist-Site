@@ -6,6 +6,10 @@
   @include flexRowCenter;
   justify-content: center;
   font-weight: bold;
+
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .btnMd {
@@ -26,7 +30,8 @@
   height: 20vh;
   width: 100%;
   background-color: $menuColour1;
-  background-image: radial-gradient(circle at 70% 200%, $menuColour5 40%, $menuColour1 42%);
+  background-image: radial-gradient(circle 20vh at 80vw 12vh, $menuColour5 40%, rgba(0, 18, 184,.1) 48%),
+    linear-gradient(320deg, $menuColour5 25%, $menuColour1 30%);
   color: $mainColour;
   @include flexRowCenter();
   z-index: 2;
@@ -552,10 +557,14 @@
     display: flex !important;
   }
 
+  .navbar{
+    height: 12vh;
+  }
+
   .menu{
     height: 5vh;
     width: 100%;
-    top: 20vh;
+    top: 12vh;
 
     ul {
       height: 100%;
