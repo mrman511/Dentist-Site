@@ -241,6 +241,7 @@
 .serviceItem {
   width: 200px;
   height: 200px;
+  margin: 10px;
   align-self: center;
   justify-self: center;
   // position: absolute;
@@ -289,19 +290,26 @@
         width: 90%;
       }
     }
-  }
 
+  }
+  
+  
   .btn {
     box-shadow: $boxShadowWhiteBackground;
     margin-bottom: 1em;
     color: white;
-
+    
     span{
       margin: 0 1em;
     }
   }
 }
 
+.serviceItem:hover{
+  width: 220px;
+  height: 220px;
+  margin: 0px;
+}
 ///////////////////
 /////Team Item/////
 ///////////////////

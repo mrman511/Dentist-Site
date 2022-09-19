@@ -18,7 +18,6 @@ export default function ServiceItem(props){
           initial="enter"
           animate="animate"
           exit='exit'
-          whileHover={{ scale: 1.2 }}
           onClick={ () => cycleInfo() }
           >
           <div className={styles.serviceCard}>
