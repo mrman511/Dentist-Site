@@ -572,10 +572,22 @@
       margin: 0;
       padding: 0;
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: normal;
       
-      li {
-        font-size: 1.5em;
+      a {
+        height: 100%;
+        width: 20vw;
+        @include flexRowCenter;
+        justify-content: center;
+
+        li {
+          
+          font-size: 1.5em;
+        }
+
+        &:hover {
+          background: lighten($menuColour2, 10);
+        }
       }
     }
   }
