@@ -37,14 +37,15 @@
   z-index: 2;
 
   .titleContainer {
-    margin-left: 20%;
+    margin-left: 10%;
     
     h1 {
       font-family: cursive;
-      font-size: 38px;
+      font-size: 28px;
       margin: 0;
     }
     h3 {
+      font-size: 18px;
       margin: 0;
     }
   }
@@ -522,6 +523,17 @@
 
 @media only screen and (min-width: 400px){
 
+  .navbar{
+
+    .titleContainer{
+      h1 {
+        font-size: 38px;
+      }
+      h3 {
+        font-size: 24px;
+      }
+    }
+  }
 
   .listContainer{
 
