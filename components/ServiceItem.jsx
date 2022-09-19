@@ -5,7 +5,7 @@ import image from '../public/mock-service.jpeg';
 import { serviceVariants } from "../utils/data/motion-objects";
 
 export default function ServiceItem(props){ 
-  const { styles, title, description, listCount, position, screenWidth } = props
+  const { styles, id, title, description, listCount, position, screenWidth } = props
   const [showInfo, cycleInfo] = useCycle(false, true);
   const style = serviceStyles(position, listCount, screenWidth);
 
@@ -28,7 +28,7 @@ export default function ServiceItem(props){
               layout="intrinsic"
               objectFit="fill"
               />
-          <h3>{ title }</h3>
+          <h3>Service { id }</h3>
           </div>
         </motion.article> }
 
@@ -52,7 +52,7 @@ export default function ServiceItem(props){
                     layout="intrinsic"
                     objectFit="scale-down"
                     />
-                <h3>{ title }</h3>
+                <h3>Service { id }</h3>
               </div>
               <p>{ description }</p>
               <a  className={`${styles.btn} ${styles.btnMd}`}><span>Make An Appointment</span></a>

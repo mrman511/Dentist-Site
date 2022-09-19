@@ -13,8 +13,12 @@ for (let i = 0; i < 5; i++){
 }
 
 for (let i = 0; i < mockServiceData.length; i++){
+  console.log('I: ', i)
   mockServiceData[i].id = (i + 1);
+  console.log( mockServiceData[i])
 }
+
+console.log('SERVICE DATA', mockServiceData)
 
 module.exports = {
   mockServiceData

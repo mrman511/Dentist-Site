@@ -22,6 +22,7 @@ export default function ServicesList({ styles, screenWidth }){
       key={ mockServiceData[i].id }
       position={ i }
       styles={ styles }
+      id = { mockServiceData[i].id }
       title={ mockServiceData[i].title }
       imagePath={ mockServiceData[i].imagePath }
       description={ mockServiceData[i].description }
