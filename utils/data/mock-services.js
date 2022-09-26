@@ -2,25 +2,35 @@ import loremDescription from "./loremDescription";
 
 
 
-const mockServiceData = [];
-
-for (let i = 1; i < 6; i++){
-  const genericService = {
-    id: i,
-    title: "Lorem Ipsum",
-    imagePath: "mock-service.jpeg",
-    description: loremDescription,
+const mockServiceData = [
+  {
+    id: 1,
+    title: 'Routine Cleaning',
+    imagePath: 'routine-cleaning.jpeg',
+  },{
+    id: 2,
+    title: 'Dental X-rays',
+    imagePath: 'xray.jpg',
+  },{
+    id: 3,
+    title: 'Low Level Laser Therapy',
+    imagePath: 'low-level-laser-therapy.png',
+  },{
+    id: 4,
+    title: 'Infant Teeth',
+    imagePath: 'infantTeeth.jpg',
+  },{
+    id: 5,
+    title: 'Invisalign',
+    imagePath: 'invisalign.jpeg',
+  },{
+    id: 6,
+    title: 'Dental Implants',
+    imagePath: 'implant.jpeg',
   }
-  mockServiceData.push(genericService);
-}
+];
 
-// for (let i = 0; i < mockServiceData.length; i++){
-//   console.log('I: ', i)
-//   mockServiceData[i].id = (i + 1);
-//   console.log( mockServiceData[i])
-// }
-
-console.log('SERVICE DATA', mockServiceData)
+mockServiceData.forEach(item => item.description = loremDescription)
 
 module.exports = {
   mockServiceData

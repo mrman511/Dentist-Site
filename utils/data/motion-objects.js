@@ -146,8 +146,6 @@ const serviceVariants = {
     },
 
     animate: {
-      // position: 'absoulte',
-      // gridArea:'1 / 1 / -1 / -1',
       width: '97%',
       height: '100%',
       zIndex: 1,
