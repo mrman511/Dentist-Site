@@ -1,29 +1,5 @@
 @import './variables.scss';
-
-.btn{
-  background-color: $menuColour5;
-  // box-shadow: $boxShadowDarkBackground;
-  @include flexRowCenter;
-  justify-content: center;
-  font-weight: bold;
-
-  &:hover{
-    cursor: pointer;
-  }
-}
-
-.btnMd {
-  height: 35px;
-  border-radius: 5px;
-}
-
-.btnLg{
-  height: 50px;
-  width: 80%;
-  max-width: 400px;
-  border-radius: 6px;
-  font-size: 1.25em;
-}
+@import './buttons.scss';
 
 .navbar {
   position: fixed;
