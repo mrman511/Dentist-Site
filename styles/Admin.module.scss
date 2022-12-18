@@ -88,11 +88,11 @@
   }
 }
 
-////////////////////
-////Service List////
-////////////////////
+///////////////////
+///////Lists///////
+///////////////////
 
-.services{
+.listBlock{
   position: relative;
   width: 100%;
   margin-top: 2em;
@@ -125,7 +125,7 @@
 
   }
 
-  .serviceList{
+  .list{
     position: relative;
     width: 90vw;
 
@@ -142,7 +142,15 @@
       .imageContainer{
         position: relative;
         width: 60px;
+        height: 60px;
+        border-radius: 5px;
+        overflow: hidden;
         display: none;
+
+        img{
+          width: 100%;
+          height: 100%
+        }
       }
 
       h4{
@@ -173,9 +181,9 @@
 
 @media only screen and (min-width: 420px){
 
-  .services{
+  .listBlock{
 
-    .serviceList{
+    .list{
 
       .listItem{
 
@@ -189,9 +197,9 @@
 
 @media only screen and (min-width: 600px){
 
-  .services{
+  .listBlock{
 
-    .serviceList{
+    .list{
 
       .listItem{
 
