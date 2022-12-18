@@ -24,7 +24,7 @@ def createService(request):
       return redirect('services')
 
   else:
-    print("::::GET::::")
+    # print("::::GET::::")
     form = ServiceForm()
     context = { 'form': form }
     return render(request, 'serviceForm.html', context)
