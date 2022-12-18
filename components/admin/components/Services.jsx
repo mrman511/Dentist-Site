@@ -13,13 +13,13 @@ export default function Services({ styles, services, setServices, cookie }) {
   )
 
   return(
-    <article className={ styles.services }>
+    <article className={ styles.listBlock }>
       <div className={ styles.listHeader }>
         <h2>Services: </h2>
         <button className={ [styles.btn, styles.btnMd].join(' ') } >Add New Service</button>
       </div>
       <ServiceForm styles={ styles } cookie={ cookie } setServices={ setServices }/>
-      <div className={ styles.serviceList }>
+      <div className={ styles.list }>
         { parsedServices }
       </div>
     </article>
