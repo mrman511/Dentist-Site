@@ -14,9 +14,12 @@ urlpatterns = [
   path('', views.getRoutes),
   path('services/', views.getServices),
   path('services/create/', views.createService),
-  path('services/<str:pk>/', views.getService),
+  path('service/<str:pk>/', views.getService),
+  path('service/<str:pk>/image/', views.getServiceImage),
+  path('service/<str:pk>/delete/', views.deleteService),
   # path('users/', views.getUsers),
 
-  path('service/<str:pk>/delete', views.deleteService),
+  path('profiles/', views.getProfiles),
+
   # path('service/<str:pk>/edit', views.editService),
 ]

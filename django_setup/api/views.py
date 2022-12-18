@@ -1,10 +1,14 @@
-from django.http import JsonResponse
-from rest_framework.decorators import api_view, permission_classes
+from django.http import JsonResponse, HttpResponse
+from django.templatetags.static import static
+from rest_framework.decorators import api_view, permission_classes, renderer_classes
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework_simplejwt import authentication
 from rest_framework.response import Response
-from .serializers import ServiceSerializer, UserSerializer
+from rest_framework.renderers import JSONRenderer
+from .renderers import PNGRenderer
+from .serializers import ServiceSerializer, UserSerializer, ProfileSerializer
 from django.contrib.auth.models import User
+from users.models import Profile
 from services.models import Service
 
 @api_view(['GET'])
@@ -28,6 +32,8 @@ def getUserData(request):
 def getServices(request):
   services = Service.objects.all()
   serializer = ServiceSerializer(services, many=True)
+  # for data in serializer.data:
+  #   data["image"] = static(data['featured_image'])
   return Response(serializer.data)
 
 @api_view(['GET'])
@@ -36,11 +42,19 @@ def getService(request, pk):
   serializer = ServiceSerializer(service, many=False)
   return Response(serializer.data)
 
+@api_view(['GET'])
+# @renderer_classes([JSONRenderer])
+def getServiceImage(request, pk):
+  renderer_classes=(PNGRenderer)
+  serviceImage = Service.objects.get(id=pk).featured_image
+  image = static(serviceImage)
+  return Response(image, content_type="image/*")
+
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def createService(request):
   data = request.data
-  print('CREATE SERVICE: ', data)
   service = Service.objects.create()
   service.title = data['title']
   service.description = data['description']
@@ -57,8 +71,12 @@ def deleteService(request, pk):
 
   return Response()
 
-# @api_view(['GET'])
-# def getUsers(request):
-#   user = User.objects.all()
-#   serializer = UserSerializer(user, many=True)
-#   return Response(serializer.data)
+# ////////////
+# PROFILE VIEWS
+# ////////////
+
+@api_view(['GET'])
+def getProfiles(request):
+  profiles = Profile.objects.all()
+  serializer = ProfileSerializer(profiles, many=True)
+  return Response(serializer.data)
