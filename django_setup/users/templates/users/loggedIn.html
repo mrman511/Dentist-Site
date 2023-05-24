@@ -1,0 +1,8 @@
+<div>
+  <h1>You Logged In!</h1>
+</div>
+
+<form action="{% url 'logout' %}" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="LOG OUT">
+</form>
