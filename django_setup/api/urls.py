@@ -21,5 +21,8 @@ urlpatterns = [
 
   path('profiles/', views.getProfiles),
 
+  path('pageOptions/', views.getOptions),
+  path('pageOptions/<str:pk>/addImage', views.addImage),
+
   # path('service/<str:pk>/edit', views.editService),
 ]

@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
     'services.apps.ServicesConfig',
     'users.apps.UsersConfig',
+    'page_options.apps.PageOptionsConfig',
 
     'rest_framework',
     'corsheaders',

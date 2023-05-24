@@ -6,9 +6,10 @@ from rest_framework_simplejwt import authentication
 from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer
 from .renderers import PNGRenderer
-from .serializers import ServiceSerializer, UserSerializer, ProfileSerializer
+from .serializers import ServiceSerializer, UserSerializer, ProfileSerializer, PageOptionsSerializer
 from django.contrib.auth.models import User
 from users.models import Profile
+from page_options.models import Page_Option
 from services.models import Service
 
 @api_view(['GET'])
@@ -80,3 +81,23 @@ def getProfiles(request):
   profiles = Profile.objects.all()
   serializer = ProfileSerializer(profiles, many=True)
   return Response(serializer.data)
+
+# ////////////
+# PAGE OPTIONS
+# ////////////
+
+@api_view(['GET'])
+def getOptions(request):
+  page_options = Page_Option.objects.all()
+  serializer = PageOptionsSerializer(page_options, many=True)
+  return Response(serializer.data)
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def addImage(request, pk):
+  pageOptions = Page_Option.objects.get(pk=id)
+  data = request.data
+  pageOptions[data.imageType] = data.image
+  pageOptions.save()
+
+  return Response()
